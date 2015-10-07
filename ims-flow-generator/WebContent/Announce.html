@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl" ng-init="FlushPrompt=0;names=['Jani','Hege','Kai'];Audio1=1;Audio2=2;Audio3=3;Audio4=4;Audio5=5;Audio6=6;Audio7=7;Audio8=8;Audio9=9;Audio0=10" class="container">
+
+<section id="tables">
+  <div class="page-header">
+    <h1>Announce</h1>
+  </div>
+  
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr><th>Version</th><th>Name</th><th>Description</th><th>FlushPrompt</th><th>NextForm</th><th>NextFormDefault</th><th>Tag</th></tr>
+    </thead>
+    <tbody>
+			<tr><td><input type="text" ng-model="Version" class="form-control input-small"></td>
+			<td><input type="text" ng-model="Name" class="form-control input-small""></td>
+			<td><input type="text" ng-model="Description" class="form-control input-small"></td>
+			<td><select class="form-control input-mir" ng-model="FlushPrompt" >
+  					<option>0</option>
+  					<option>1</option>
+				</select></td>
+			<td><select class="form-control input-xlarge" ng-model="NextForm" >
+  					<option ng-repeat="x in forms" value="{{x.id}}">{{ x.name }}</option>
+				</select></td>
+			<td><select class="form-control input-xlarge" ng-model="NextFormDefault" >
+  					<option ng-repeat="x in forms" value="{{x.id}}">{{ x.name }}</option>
+				</select></td>
+			<td><select class="form-control input-xlarge" ng-model="Tag" >
+					<option value=""></option>
+					<option value="novo">** Nova Tag **</option>
+					
+  					<option ng-repeat="x in tags" value="{{x.id}}">{{ x.description }}</option>
+				</select></td>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered table-striped table-hover" ng-show="Tag = 'novo'">
+    <thead>
+        <tr><th>Type</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+			<td><select class="form-control input-xlarge" ng-model="TagType" >
+  					<option ng-repeat="x in tagTypes" value="{{x.id}}">{{ x.name }}</option>
+				</select></td>
+			<td><input type="text" ng-model="TagDescription" class="form-control input-small"></td>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr><th></th><th>Audio</th><th>Type</th><th>Name</th><th>Description</th><th>Path</th></tr>
+    </thead>
+    <tbody>
+			<tr><td><input type="checkbox" ng-model="chk1"></td><td>{{Audio1}}</td>
+			<td><select class="form-control input-mir" ng-model="Type1" ng-disabled="!chk1" ng-init="Type1='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Description1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Path1" class="form-control input-small" ng-disabled="!chk1"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk2"></td><td>{{Audio2}}</td>
+			<td><select class="form-control input-mir" ng-model="Type2" ng-disabled="!chk2" ng-init="Type2='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name2" class="form-control input-small" ng-disabled="!chk2"></td>
+			<td><input type="text" ng-model="Description2" class="form-control input-small" ng-disabled="!chk2"></td>
+			<td><input type="text" ng-model="Path2" class="form-control input-small" ng-disabled="!chk2"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk3"></td><td>{{Audio3}}</td>
+			<td><select class="form-control input-mir" ng-model="Type3" ng-disabled="!chk3" ng-init="Type3='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="Description3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="Path3" class="form-control input-small" ng-disabled="!chk3"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk4"></td><td>{{Audio4}}</td>
+			<td><select class="form-control input-mir" ng-model="Type4" ng-disabled="!chk4" ng-init="Type4='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name4" class="form-control input-small" ng-disabled="!chk4"></td>
+			<td><input type="text" ng-model="Description4" class="form-control input-small" ng-disabled="!chk4"></td>
+			<td><input type="text" ng-model="Path4" class="form-control input-small" ng-disabled="!chk4"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk5"></td><td>{{Audio5}}</td>
+			<td><select class="form-control input-mir" ng-model="Type5" ng-disabled="!chk5" ng-init="Type5='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="Description5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="Path5" class="form-control input-small" ng-disabled="!chk5"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk6"></td><td>{{Audio6}}</td>
+			<td><select class="form-control input-mir" ng-model="Type6" ng-disabled="!chk6" ng-init="Type6='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name6" class="form-control input-small" ng-disabled="!chk6"></td>
+			<td><input type="text" ng-model="Description6" class="form-control input-small" ng-disabled="!chk6"></td>
+			<td><input type="text" ng-model="Path6" class="form-control input-small" ng-disabled="!chk6"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk7"></td><td>{{Audio7}}</td>
+			<td><select class="form-control input-mir" ng-model="Type7" ng-disabled="!chk7" ng-init="Type7='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name7" class="form-control input-small" ng-disabled="!chk7"></td>
+			<td><input type="text" ng-model="Description7" class="form-control input-small" ng-disabled="!chk7"></td>
+			<td><input type="text" ng-model="Path7" class="form-control input-small" ng-disabled="!chk7"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk8"></td><td>{{Audio8}}</td>
+			<td><select class="form-control input-mir" ng-model="Type8" ng-disabled="!chk8" ng-init="Type8='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="Description8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="Path8" class="form-control input-small" ng-disabled="!chk8"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk9"></td><td>{{Audio9}}</td>
+			<td><select class="form-control input-mir" ng-model="Type9" ng-disabled="!chk9" ng-init="Type9='WAV'">
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name9" class="form-control input-small" ng-disabled="!chk9"></td>
+			<td><input type="text" ng-model="Description9" class="form-control input-small" ng-disabled="!chk9"></td>
+			<td><input type="text" ng-model="Path9" class="form-control input-small" ng-disabled="!chk9"></td>
+
+			<tr><td><input type="checkbox" ng-model="chk0"></td><td>{{Audio0}}</td>
+			<td><select class="form-control input-mir" ng-model="Type0" ng-disabled="!chk0" ng-init="Type0='WAV'">
+  					<option>VAR</option>
+  					<option>WAV</option>
+  					<option>TTS</option>
+				</select></td>
+			<td><input type="text" ng-model="Name0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="Description0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="Path0" class="form-control input-small" ng-disabled="!chk0"></td>
+    </tbody>
+  </table>
+</section>
+
+<button class="btn btn-primary" data-toggle="collapse" data-target="#code">PL/SQL</button>
+     <ul class="nav navbar-nav navbar-right">
+     <button type="button" class="btn btn-success" data-dismiss="modal" aria-hidden="true" onclick="exec();">Executa</button>
+     </ul>
+     <br><br>
+	 <div id="code" class="collapse well well-sm">
+	 <code id="pl" ><br>DO $$<br>
+DECLARE <br>
+   TAG BIGINT; <br>
+    PROMPTID BIGINT; <br>
+   FORMID BIGINT; <br>
+ANNID BIGINT; <br>
+AUDIOID BIGINT; <br>
+ <br>
+BEGIN <br>
+ <div ng-show="Tag">
+   SELECT MAX(ID)+1 INTO TAG FROM FLOW.TAG; <br>
+   INSERT INTO FLOW.TAG (ID,TAGTYPEID,DESCRIPTION,VERSIONID) VALUES (TAG,{{TagType}},'{{TagDescription}}',{{Version}}); <br>
+ </div>
+ <br>
+   SELECT FLOW.GET_UID() INTO PROMPTID; <br>
+   INSERT INTO FLOW.PROMPT (ID,NAME,VERSIONID) VALUES (PROMPTID,'{{Name}}',{{Version}}); <br>
+ <br>
+   SELECT FLOW.GET_UID() INTO ANNID; <br>
+   INSERT INTO FLOW.ANNOUNCE (ID,NAME,DESCRIPTION,FLUSHPROMPT,PROMPT,NEXTFORM,TAG,VERSIONID) VALUES (ANNID,'{{Name}}','{{Description}}',{{FlushPrompt}},PROMPTID,{{NextForm}},{{Tag}},{{Version}}); <br>
+ <br>
+ <br>
+   SELECT FLOW.GET_UID() INTO FORMID; <br>
+   INSERT INTO FLOW.FORM (ID,NAME,DESCRIPTION,FORMTYPE,FORMID,NEXTFORMDEFAULT,VERSIONID) VALUES (FORMID,'{{Name}}','{{Description}}',1,ANNID,{{NextFormDefault}},{{Version}}); <br>
+ <br>
+   SELECT FLOW.GET_UID() INTO AUDIOID; <br>
+ <div ng-show="chk1">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type1}}','{{Name1}}','{{Description1}}','{{Path1}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio1}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk2">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type2}}','{{Name2}}','{{Description2}}','{{Path2}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio2}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk3">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type3}}','{{Name3}}','{{Description3}}','{{Path3}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio3}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk4">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type4}}','{{Name4}}','{{Description4}}','{{Path4}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio4}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk5">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type5}}','{{Name5}}','{{Description5}}','{{Path5}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio5}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk6">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type6}}','{{Name6}}','{{Description6}}','{{Path6}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio6}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk7">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type7}}','{{Name7}}','{{Description7}}','{{Path7}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio7}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk8"><br>
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type8}}','{{Name8}}','{{Description8}}','{{Path8}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio8}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk9">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type9}}','{{Name9}}','{{Description9}}','{{Path9}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio9}},{{Version}}); <br>
+   AUDIOID:=AUDIOID+1; <br><br>
+ </div>
+ <div ng-show="chk0">
+   INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type0}}','{{Name0}}','{{Description0}}','{{Path0}}',{{Version}}); <br>
+   INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio0}},{{Version}}); <br>
+ </div>
+   <br>
+   RAISE NOTICE 'SUCCESS'; <br>
+EXCEPTION WHEN OTHERS THEN <br>
+   RAISE WARNING 'ROLLBACK - ERRO NO SCRIPT % %', SQLERRM, SQLSTATE; <br>
+END; <br>
+$$language plpgsql; <br>
+</code>
+     </div>
+</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope,$http) {
+	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/forms").success(function (response) {$scope.forms = response.forms;});
+	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/tags").success(function (response) {$scope.tags = response.tags;});
+	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/tagTypes").success(function (response) {$scope.tagTypes = response.tagTypes;});
+});
+
+function exec() {
+	vpl = document.getElementById("pl");
+	alert(vpl.innerText);
+	//post_to_url('http://localhost:7001/ims-flow-generator/rest/flow/exec',{'pl': vpl.innerText});
+}
+
+function post_to_url(url, params) {
+    var form = document.createElement('form');
+    form.action = url;
+    form.method = 'POST';
+
+    for (var i in params) {
+        if (params.hasOwnProperty(i)) {
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = i;
+            input.value = params[i];
+            form.appendChild(input);
+        }
+    }
+
+    form.submit();
+}
+</script>
+</body>
+</html>
