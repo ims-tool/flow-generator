@@ -118,4 +118,36 @@ public class FlowDao {
 		
 		return json.toString();
 	}
+
+	public static String getNoInputList() {
+		JSONObject json = new JSONObject();
+		JSONArray jarr = new JSONArray();
+
+		AbstractDao dao = null;
+		Connection conn = null;
+		try {
+			dao = new AbstractDao();
+			conn = dao.getConnection();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from flow.NoMatchInput where type='NoInput' order by id");
+			while (rs.next()) {
+				JSONObject jobj = new JSONObject();
+				jobj.put("id", rs.getLong("id"));
+				jobj.put("name", rs.getString("name"));
+				jarr.put(jobj);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dao.ReleaseConnection(conn);
+			dao.Finalize();
+		}
+		
+		json.put("noinputs", jarr);
+		
+		return json.toString();
+	
+	}
+	
+	
 }

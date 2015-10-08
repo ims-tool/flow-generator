@@ -52,12 +52,25 @@ public class Flow {
   }
 
 
+  
   @Path("/tagTypes")
   @GET
   @Produces(MediaType.TEXT_HTML)
   public String getTagTypess() {
 	    return FlowDao.getTagTypesList();
   }
+  
+  
+
+  @Path("/noinputs")
+  @GET
+  @Produces(MediaType.TEXT_HTML)
+  public String getNoInput() {
+	    return FlowDao.getNoInputList();
+  }
+  
+
+  
   
   @POST
   @Path("/exec")
