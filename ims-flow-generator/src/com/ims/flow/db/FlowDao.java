@@ -149,5 +149,36 @@ public class FlowDao {
 	
 	}
 	
+	public static String getNoMatchList() {
+		JSONObject json = new JSONObject();
+		JSONArray jarr = new JSONArray();
+
+		AbstractDao dao = null;
+		Connection conn = null;
+		try {
+			dao = new AbstractDao();
+			conn = dao.getConnection();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("select * from flow.NoMatchInput where type='NoMatch' order by id");
+			while (rs.next()) {
+				JSONObject jobj = new JSONObject();
+				jobj.put("id", rs.getLong("id"));
+				jobj.put("name", rs.getString("name"));
+				jarr.put(jobj);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			dao.ReleaseConnection(conn);
+			dao.Finalize();
+		}
+		
+		json.put("nomatchs", jarr);
+		
+		return json.toString();
+	
+	}
+	
+	
 	
 }

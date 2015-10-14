@@ -43,11 +43,11 @@
 	</select></td>		
 					
 				
-			<td><select class="form-control input-xlarge" ng-model="Tag" >
+			<td><select class="form-control input-xlarge" ng-model="NoMatch" >
 					<option value=""></option>
-					<option value="novo">** Nova Tag **</option>
+					<option value="novo">** Novo NoMatch **</option>
 					
-  					<option ng-repeat="x in tags" value="{{x.id}}">{{ x.description }}</option>
+  					<option ng-repeat="x in nomatchs" value="{{x.id}}">{{ x.name }}</option>
 				</select></td>
     </tbody>
   </table>
@@ -56,7 +56,7 @@
 
   <table class="table table-bordered table-striped table-hover">
     <thead>
-        <tr><th></th><th>Audio</th><th>Type</th><th>Name</th><th>Description</th><th>Path</th></tr>
+        <tr><th></th><th>Audio</th><th>Type</th><th>Name</th><th>Description</th><th>Path</th><th>Condition</th></tr>
     </thead>
     <tbody>
 			<tr><td><input type="checkbox" ng-model="chk1"></td><td>{{Audio1}}</td>
@@ -67,6 +67,7 @@
 			<td><input type="text" ng-model="Name1" class="form-control input-small" ng-disabled="!chk1"></td>
 			<td><input type="text" ng-model="Description1" class="form-control input-small" ng-disabled="!chk1"></td>
 			<td><input type="text" ng-model="Path1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="ConditionA1" class="form-control input-small" ng-disabled="!chk1"></td>
 
 			<tr><td><input type="checkbox" ng-model="chk2"></td><td>{{Audio2}}</td>
 			<td><select class="form-control input-mir" ng-model="Type2" ng-disabled="!chk2" ng-init="Type2='WAV'">
@@ -76,7 +77,8 @@
 			<td><input type="text" ng-model="Name2" class="form-control input-small" ng-disabled="!chk2"></td>
 			<td><input type="text" ng-model="Description2" class="form-control input-small" ng-disabled="!chk2"></td>
 			<td><input type="text" ng-model="Path2" class="form-control input-small" ng-disabled="!chk2"></td>
-
+			<td><input type="text" ng-model="ConditionA2" class="form-control input-small" ng-disabled="!chk2"></td>
+			
 			<tr><td><input type="checkbox" ng-model="chk3"></td><td>{{Audio3}}</td>
 			<td><select class="form-control input-mir" ng-model="Type3" ng-disabled="!chk3" ng-init="Type3='WAV'">
   					<option>WAV</option>
@@ -85,6 +87,7 @@
 			<td><input type="text" ng-model="Name3" class="form-control input-small" ng-disabled="!chk3"></td>
 			<td><input type="text" ng-model="Description3" class="form-control input-small" ng-disabled="!chk3"></td>
 			<td><input type="text" ng-model="Path3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="ConditionA3" class="form-control input-small" ng-disabled="!chk3"></td>
 
 			<tr><td><input type="checkbox" ng-model="chk4"></td><td>{{Audio4}}</td>
 			<td><select class="form-control input-mir" ng-model="Type4" ng-disabled="!chk4" ng-init="Type4='WAV'">
@@ -94,7 +97,8 @@
 			<td><input type="text" ng-model="Name4" class="form-control input-small" ng-disabled="!chk4"></td>
 			<td><input type="text" ng-model="Description4" class="form-control input-small" ng-disabled="!chk4"></td>
 			<td><input type="text" ng-model="Path4" class="form-control input-small" ng-disabled="!chk4"></td>
-
+			<td><input type="text" ng-model="ConditionA4" class="form-control input-small" ng-disabled="!chk4"></td>
+			
 			<tr><td><input type="checkbox" ng-model="chk5"></td><td>{{Audio5}}</td>
 			<td><select class="form-control input-mir" ng-model="Type5" ng-disabled="!chk5" ng-init="Type5='WAV'">
   					<option>WAV</option>
@@ -103,6 +107,7 @@
 			<td><input type="text" ng-model="Name5" class="form-control input-small" ng-disabled="!chk5"></td>
 			<td><input type="text" ng-model="Description5" class="form-control input-small" ng-disabled="!chk5"></td>
 			<td><input type="text" ng-model="Path5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="ConditionA5" class="form-control input-small" ng-disabled="!chk5"></td>			
 
 			<tr><td><input type="checkbox" ng-model="chk6"></td><td>{{Audio6}}</td>
 			<td><select class="form-control input-mir" ng-model="Type6" ng-disabled="!chk6" ng-init="Type6='WAV'">
@@ -112,7 +117,8 @@
 			<td><input type="text" ng-model="Name6" class="form-control input-small" ng-disabled="!chk6"></td>
 			<td><input type="text" ng-model="Description6" class="form-control input-small" ng-disabled="!chk6"></td>
 			<td><input type="text" ng-model="Path6" class="form-control input-small" ng-disabled="!chk6"></td>
-
+			<td><input type="text" ng-model="ConditionA6" class="form-control input-small" ng-disabled="!chk6"></td>
+			
 			<tr><td><input type="checkbox" ng-model="chk7"></td><td>{{Audio7}}</td>
 			<td><select class="form-control input-mir" ng-model="Type7" ng-disabled="!chk7" ng-init="Type7='WAV'">
   					<option>WAV</option>
@@ -121,7 +127,8 @@
 			<td><input type="text" ng-model="Name7" class="form-control input-small" ng-disabled="!chk7"></td>
 			<td><input type="text" ng-model="Description7" class="form-control input-small" ng-disabled="!chk7"></td>
 			<td><input type="text" ng-model="Path7" class="form-control input-small" ng-disabled="!chk7"></td>
-
+			<td><input type="text" ng-model="ConditionA7" class="form-control input-small" ng-disabled="!chk7"></td>
+			
 			<tr><td><input type="checkbox" ng-model="chk8"></td><td>{{Audio8}}</td>
 			<td><select class="form-control input-mir" ng-model="Type8" ng-disabled="!chk8" ng-init="Type8='WAV'">
   					<option>WAV</option>
@@ -130,6 +137,7 @@
 			<td><input type="text" ng-model="Name8" class="form-control input-small" ng-disabled="!chk8"></td>
 			<td><input type="text" ng-model="Description8" class="form-control input-small" ng-disabled="!chk8"></td>
 			<td><input type="text" ng-model="Path8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="ConditionA8" class="form-control input-small" ng-disabled="!chk8"></td>			
 
 			<tr><td><input type="checkbox" ng-model="chk9"></td><td>{{Audio9}}</td>
 			<td><select class="form-control input-mir" ng-model="Type9" ng-disabled="!chk9" ng-init="Type9='WAV'">
@@ -139,7 +147,8 @@
 			<td><input type="text" ng-model="Name9" class="form-control input-small" ng-disabled="!chk9"></td>
 			<td><input type="text" ng-model="Description9" class="form-control input-small" ng-disabled="!chk9"></td>
 			<td><input type="text" ng-model="Path9" class="form-control input-small" ng-disabled="!chk9"></td>
-
+			<td><input type="text" ng-model="ConditionA9" class="form-control input-small" ng-disabled="!chk9"></td>
+			
 			<tr><td><input type="checkbox" ng-model="chk0"></td><td>{{Audio0}}</td>
 			<td><select class="form-control input-mir" ng-model="Type0" ng-disabled="!chk0" ng-init="Type0='WAV'">
   					<option>VAR</option>
@@ -149,10 +158,94 @@
 			<td><input type="text" ng-model="Name0" class="form-control input-small" ng-disabled="!chk0"></td>
 			<td><input type="text" ng-model="Description0" class="form-control input-small" ng-disabled="!chk0"></td>
 			<td><input type="text" ng-model="Path0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="ConditionA0" class="form-control input-small" ng-disabled="!chk0"></td>			
     </tbody>
   </table>
   
 <!-- AUDIO END ================================================== -->  
+
+<!-- CHOICE BEGIN ================================================== -->
+
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+        <tr><th></th><th>DTMF</th><th>Name</th><th>Contidion</th><th>NextForm</th><th>Tag</th></tr>
+    </thead>
+    <tbody>
+			<tr><td><input type="checkbox" ng-model="chk1"></td>
+			<td><input type="text" ng-model="DTMF1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Name1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Condition1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="NextForm1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Tag1" class="form-control input-small" ng-disabled="!chk1"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk2"></td>
+			<td><input type="text" ng-model="DTMF2" class="form-control input-small" ng-disabled="!chk2"></td>
+			<td><input type="text" ng-model="Name2" class="form-control input-small" ng-disabled="!chk2"></td>
+			<td><input type="text" ng-model="Condition2" class="form-control input-small" ng-disabled="!chk2"></td>
+			<td><input type="text" ng-model="NextForm2" class="form-control input-small" ng-disabled="!chk2"></td>
+			<td><input type="text" ng-model="Tag2" class="form-control input-small" ng-disabled="!chk2"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk3"></td>
+			<td><input type="text" ng-model="DTMF3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="Name3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="Condition3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="NextForm3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="Tag3" class="form-control input-small" ng-disabled="!chk3"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk4"></td>
+			<td><input type="text" ng-model="DTMF4" class="form-control input-small" ng-disabled="!chk4"></td>
+			<td><input type="text" ng-model="Name4" class="form-control input-small" ng-disabled="!chk4"></td>
+			<td><input type="text" ng-model="Condition4" class="form-control input-small" ng-disabled="!chk4"></td>
+			<td><input type="text" ng-model="NextForm4" class="form-control input-small" ng-disabled="!chk4"></td>
+			<td><input type="text" ng-model="Tag4" class="form-control input-small" ng-disabled="!chk4"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk5"></td>
+			<td><input type="text" ng-model="DTMF5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="Name5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="Condition5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="NextForm5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="Tag5" class="form-control input-small" ng-disabled="!chk5"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk6"></td>
+			<td><input type="text" ng-model="DTMF6" class="form-control input-small" ng-disabled="!chk6"></td>
+			<td><input type="text" ng-model="Name6" class="form-control input-small" ng-disabled="!chk6"></td>
+			<td><input type="text" ng-model="Condition6" class="form-control input-small" ng-disabled="!chk6"></td>
+			<td><input type="text" ng-model="NextForm6" class="form-control input-small" ng-disabled="!chk6"></td>
+			<td><input type="text" ng-model="Tag6" class="form-control input-small" ng-disabled="!chk6"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk7"></td>
+			<td><input type="text" ng-model="DTMF7" class="form-control input-small" ng-disabled="!chk7"></td>
+			<td><input type="text" ng-model="Name7" class="form-control input-small" ng-disabled="!chk7"></td>
+			<td><input type="text" ng-model="Condition7" class="form-control input-small" ng-disabled="!chk7"></td>
+			<td><input type="text" ng-model="NextForm7" class="form-control input-small" ng-disabled="!chk7"></td>
+			<td><input type="text" ng-model="Tag7" class="form-control input-small" ng-disabled="!chk7"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk8"></td>
+			<td><input type="text" ng-model="DTMF8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="Name8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="Condition8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="NextForm8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="Tag8" class="form-control input-small" ng-disabled="!chk8"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk9"></td>
+			<td><input type="text" ng-model="DTMF9" class="form-control input-small" ng-disabled="!chk9"></td>
+			<td><input type="text" ng-model="Name9" class="form-control input-small" ng-disabled="!chk9"></td>
+			<td><input type="text" ng-model="Condition9" class="form-control input-small" ng-disabled="!chk9"></td>
+			<td><input type="text" ng-model="NextForm9" class="form-control input-small" ng-disabled="!chk9"></td>
+			<td><input type="text" ng-model="Tag9" class="form-control input-small" ng-disabled="!chk9"></td>
+
+		<tr><td><input type="checkbox" ng-model="chk0"></td>
+			<td><input type="text" ng-model="DTMF0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="Name0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="Condition0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="NextForm0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="Tag0" class="form-control input-small" ng-disabled="!chk0"></td>
+    </tbody>
+  </table>
+<!-- CHOICE END ================================================== -->
+
+
   
 <!-- TAGS BEGIN ================================================== -->
 
@@ -272,6 +365,8 @@ app.controller('myCtrl', function($scope,$http) {
 	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/forms").success(function (response) {$scope.forms = response.forms;});
 	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/tags").success(function (response) {$scope.tags = response.tags;});
 	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/tagTypes").success(function (response) {$scope.tagTypes = response.tagTypes;});
+	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/noinputs").success(function (response) {$scope.noinputs = response.noinputs;});
+	$http.get("http://localhost:7001/ims-flow-generator/rest/flow/nomatchs").success(function (response) {$scope.nomatchs = response.nomatchs;});
 });
 
 function exec() {
