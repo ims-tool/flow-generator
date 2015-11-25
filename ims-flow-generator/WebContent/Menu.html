@@ -61,6 +61,8 @@
     <tbody>
 			<tr><td><input type="checkbox" ng-model="chk1"></td><td>{{Audio1}}</td>
 			<td><select class="form-control input-mir" ng-model="Type1" ng-disabled="!chk1" ng-init="Type1='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -68,9 +70,12 @@
 			<td><input type="text" ng-model="Description1" class="form-control input-small" ng-disabled="!chk1"></td>
 			<td><input type="text" ng-model="Path1" class="form-control input-small" ng-disabled="!chk1"></td>
 			<td><input type="text" ng-model="ConditionA1" class="form-control input-small" ng-disabled="!chk1"></td>
+			
 
 			<tr><td><input type="checkbox" ng-model="chk2"></td><td>{{Audio2}}</td>
 			<td><select class="form-control input-mir" ng-model="Type2" ng-disabled="!chk2" ng-init="Type2='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -81,6 +86,8 @@
 			
 			<tr><td><input type="checkbox" ng-model="chk3"></td><td>{{Audio3}}</td>
 			<td><select class="form-control input-mir" ng-model="Type3" ng-disabled="!chk3" ng-init="Type3='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -91,6 +98,8 @@
 
 			<tr><td><input type="checkbox" ng-model="chk4"></td><td>{{Audio4}}</td>
 			<td><select class="form-control input-mir" ng-model="Type4" ng-disabled="!chk4" ng-init="Type4='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -101,6 +110,8 @@
 			
 			<tr><td><input type="checkbox" ng-model="chk5"></td><td>{{Audio5}}</td>
 			<td><select class="form-control input-mir" ng-model="Type5" ng-disabled="!chk5" ng-init="Type5='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -111,6 +122,8 @@
 
 			<tr><td><input type="checkbox" ng-model="chk6"></td><td>{{Audio6}}</td>
 			<td><select class="form-control input-mir" ng-model="Type6" ng-disabled="!chk6" ng-init="Type6='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -121,6 +134,8 @@
 			
 			<tr><td><input type="checkbox" ng-model="chk7"></td><td>{{Audio7}}</td>
 			<td><select class="form-control input-mir" ng-model="Type7" ng-disabled="!chk7" ng-init="Type7='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -131,6 +146,8 @@
 			
 			<tr><td><input type="checkbox" ng-model="chk8"></td><td>{{Audio8}}</td>
 			<td><select class="form-control input-mir" ng-model="Type8" ng-disabled="!chk8" ng-init="Type8='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -141,6 +158,8 @@
 
 			<tr><td><input type="checkbox" ng-model="chk9"></td><td>{{Audio9}}</td>
 			<td><select class="form-control input-mir" ng-model="Type9" ng-disabled="!chk9" ng-init="Type9='WAV'">
+  					<option>V_WAV</option>
+  					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
 				</select></td>
@@ -151,6 +170,7 @@
 			
 			<tr><td><input type="checkbox" ng-model="chk0"></td><td>{{Audio0}}</td>
 			<td><select class="form-control input-mir" ng-model="Type0" ng-disabled="!chk0" ng-init="Type0='WAV'">
+  					<option>V_WAV</option>
   					<option>VAR</option>
   					<option>WAV</option>
   					<option>TTS</option>
@@ -174,70 +194,70 @@
     <tbody>
 			<tr><td><input type="checkbox" ng-model="chk1"></td>
 			<td><input type="text" ng-model="DTMF1" class="form-control input-small" ng-disabled="!chk1"></td>
-			<td><input type="text" ng-model="Name1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="CName1" class="form-control input-small" ng-disabled="!chk1"></td>
 			<td><input type="text" ng-model="Condition1" class="form-control input-small" ng-disabled="!chk1"></td>
 			<td><input type="text" ng-model="NextForm1" class="form-control input-small" ng-disabled="!chk1"></td>
 			<td><input type="text" ng-model="Tag1" class="form-control input-small" ng-disabled="!chk1"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk2"></td>
 			<td><input type="text" ng-model="DTMF2" class="form-control input-small" ng-disabled="!chk2"></td>
-			<td><input type="text" ng-model="Name2" class="form-control input-small" ng-disabled="!chk2"></td>
+			<td><input type="text" ng-model="CName2" class="form-control input-small" ng-disabled="!chk2"></td>
 			<td><input type="text" ng-model="Condition2" class="form-control input-small" ng-disabled="!chk2"></td>
 			<td><input type="text" ng-model="NextForm2" class="form-control input-small" ng-disabled="!chk2"></td>
 			<td><input type="text" ng-model="Tag2" class="form-control input-small" ng-disabled="!chk2"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk3"></td>
 			<td><input type="text" ng-model="DTMF3" class="form-control input-small" ng-disabled="!chk3"></td>
-			<td><input type="text" ng-model="Name3" class="form-control input-small" ng-disabled="!chk3"></td>
+			<td><input type="text" ng-model="CName3" class="form-control input-small" ng-disabled="!chk3"></td>
 			<td><input type="text" ng-model="Condition3" class="form-control input-small" ng-disabled="!chk3"></td>
 			<td><input type="text" ng-model="NextForm3" class="form-control input-small" ng-disabled="!chk3"></td>
 			<td><input type="text" ng-model="Tag3" class="form-control input-small" ng-disabled="!chk3"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk4"></td>
 			<td><input type="text" ng-model="DTMF4" class="form-control input-small" ng-disabled="!chk4"></td>
-			<td><input type="text" ng-model="Name4" class="form-control input-small" ng-disabled="!chk4"></td>
+			<td><input type="text" ng-model="CName4" class="form-control input-small" ng-disabled="!chk4"></td>
 			<td><input type="text" ng-model="Condition4" class="form-control input-small" ng-disabled="!chk4"></td>
 			<td><input type="text" ng-model="NextForm4" class="form-control input-small" ng-disabled="!chk4"></td>
 			<td><input type="text" ng-model="Tag4" class="form-control input-small" ng-disabled="!chk4"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk5"></td>
 			<td><input type="text" ng-model="DTMF5" class="form-control input-small" ng-disabled="!chk5"></td>
-			<td><input type="text" ng-model="Name5" class="form-control input-small" ng-disabled="!chk5"></td>
+			<td><input type="text" ng-model="CName5" class="form-control input-small" ng-disabled="!chk5"></td>
 			<td><input type="text" ng-model="Condition5" class="form-control input-small" ng-disabled="!chk5"></td>
 			<td><input type="text" ng-model="NextForm5" class="form-control input-small" ng-disabled="!chk5"></td>
 			<td><input type="text" ng-model="Tag5" class="form-control input-small" ng-disabled="!chk5"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk6"></td>
 			<td><input type="text" ng-model="DTMF6" class="form-control input-small" ng-disabled="!chk6"></td>
-			<td><input type="text" ng-model="Name6" class="form-control input-small" ng-disabled="!chk6"></td>
+			<td><input type="text" ng-model="CName6" class="form-control input-small" ng-disabled="!chk6"></td>
 			<td><input type="text" ng-model="Condition6" class="form-control input-small" ng-disabled="!chk6"></td>
 			<td><input type="text" ng-model="NextForm6" class="form-control input-small" ng-disabled="!chk6"></td>
 			<td><input type="text" ng-model="Tag6" class="form-control input-small" ng-disabled="!chk6"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk7"></td>
 			<td><input type="text" ng-model="DTMF7" class="form-control input-small" ng-disabled="!chk7"></td>
-			<td><input type="text" ng-model="Name7" class="form-control input-small" ng-disabled="!chk7"></td>
+			<td><input type="text" ng-model="CName7" class="form-control input-small" ng-disabled="!chk7"></td>
 			<td><input type="text" ng-model="Condition7" class="form-control input-small" ng-disabled="!chk7"></td>
 			<td><input type="text" ng-model="NextForm7" class="form-control input-small" ng-disabled="!chk7"></td>
 			<td><input type="text" ng-model="Tag7" class="form-control input-small" ng-disabled="!chk7"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk8"></td>
 			<td><input type="text" ng-model="DTMF8" class="form-control input-small" ng-disabled="!chk8"></td>
-			<td><input type="text" ng-model="Name8" class="form-control input-small" ng-disabled="!chk8"></td>
+			<td><input type="text" ng-model="CName8" class="form-control input-small" ng-disabled="!chk8"></td>
 			<td><input type="text" ng-model="Condition8" class="form-control input-small" ng-disabled="!chk8"></td>
 			<td><input type="text" ng-model="NextForm8" class="form-control input-small" ng-disabled="!chk8"></td>
 			<td><input type="text" ng-model="Tag8" class="form-control input-small" ng-disabled="!chk8"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk9"></td>
 			<td><input type="text" ng-model="DTMF9" class="form-control input-small" ng-disabled="!chk9"></td>
-			<td><input type="text" ng-model="Name9" class="form-control input-small" ng-disabled="!chk9"></td>
+			<td><input type="text" ng-model="CName9" class="form-control input-small" ng-disabled="!chk9"></td>
 			<td><input type="text" ng-model="Condition9" class="form-control input-small" ng-disabled="!chk9"></td>
 			<td><input type="text" ng-model="NextForm9" class="form-control input-small" ng-disabled="!chk9"></td>
 			<td><input type="text" ng-model="Tag9" class="form-control input-small" ng-disabled="!chk9"></td>
 
 		<tr><td><input type="checkbox" ng-model="chk0"></td>
 			<td><input type="text" ng-model="DTMF0" class="form-control input-small" ng-disabled="!chk0"></td>
-			<td><input type="text" ng-model="Name0" class="form-control input-small" ng-disabled="!chk0"></td>
+			<td><input type="text" ng-model="CName0" class="form-control input-small" ng-disabled="!chk0"></td>
 			<td><input type="text" ng-model="Condition0" class="form-control input-small" ng-disabled="!chk0"></td>
 			<td><input type="text" ng-model="NextForm0" class="form-control input-small" ng-disabled="!chk0"></td>
 			<td><input type="text" ng-model="Tag0" class="form-control input-small" ng-disabled="!chk0"></td>
@@ -246,23 +266,7 @@
 <!-- CHOICE END ================================================== -->
 
 
-  
-<!-- TAGS BEGIN ================================================== -->
 
-  <table class="table table-bordered table-striped table-hover" ng-show="Tag = 'novo'">
-    <thead>
-        <tr><th>Type</th><th>Description</th></tr>
-    </thead>
-    <tbody>
-			<td><select class="form-control input-xlarge" ng-model="TagType" >
-  					<option ng-repeat="x in tagTypes" value="{{x.id}}">{{ x.name }}</option>
-				</select></td>
-			<td><input type="text" ng-model="TagDescription" class="form-control input-small"></td>
-    </tbody>
-  </table>
-
-<!-- TAGS END ================================================== -->  
-  
   
   
 </section>
@@ -278,25 +282,33 @@ DECLARE <br>
    TAG BIGINT; <br>
     PROMPTID BIGINT; <br>
    FORMID BIGINT; <br>
-ANNID BIGINT; <br>
+MENUID BIGINT; <br>
 AUDIOID BIGINT; <br>
+CHOICEID BIGINT; <br>
  <br>
 BEGIN <br>
- <div ng-show="Tag">
-   SELECT MAX(ID)+1 INTO TAG FROM FLOW.TAG; <br>
-   INSERT INTO FLOW.TAG (ID,TAGTYPEID,DESCRIPTION,VERSIONID) VALUES (TAG,{{TagType}},'{{TagDescription}}',{{Version}}); <br>
- </div>
+
+ 
+ 
+ 
  <br>
-   SELECT FLOW.GET_UID() INTO PROMPTID; <br>
-   INSERT INTO FLOW.PROMPT (ID,NAME,VERSIONID) VALUES (PROMPTID,'{{Name}}',{{Version}}); <br>
+   SELECT FLOW.GET_UID() INTO MENUID; <br>
+   insert into FLOW.MENU (id, name, description, prompt, noinput, nomatch, versionid) VALUES (MENUID,'{{Name}}','{{Description}}',PROMPTID,{{NoInput}},{{NoMatch}},{{Version}}); <br>
  <br>
-   SELECT FLOW.GET_UID() INTO ANNID; <br>
-   INSERT INTO FLOW.ANNOUNCE (ID,NAME,DESCRIPTION,FLUSHPROMPT,PROMPT,NEXTFORM,TAG,VERSIONID) VALUES (ANNID,'{{Name}}','{{Description}}',{{FlushPrompt}},PROMPTID,{{NextForm}},{{Tag}},{{Version}}); <br>
- <br>
+ 
+ 
  <br>
    SELECT FLOW.GET_UID() INTO FORMID; <br>
-   INSERT INTO FLOW.FORM (ID,NAME,DESCRIPTION,FORMTYPE,FORMID,NEXTFORMDEFAULT,VERSIONID) VALUES (FORMID,'{{Name}}','{{Description}}',1,ANNID,{{NextFormDefault}},{{Version}}); <br>
+   INSERT INTO FLOW.FORM (ID,NAME,DESCRIPTION,FORMTYPE,FORMID,NEXTFORMDEFAULT,VERSIONID) VALUES (FORMID,'{{Name}}','{{Description}}',3,MENUID,{{NextFormDefault}},{{Version}}); <br>
  <br>
+ 
+    
+ 
+ <br>
+   SELECT FLOW.GET_UID() INTO PROMPTID; <br>
+   INSERT INTO FLOW.PROMPT (ID,NAME,VERSIONID) VALUES (PROMPTID,'{{Name}}',{{Version}}); 
+ <br>
+ 
    SELECT FLOW.GET_UID() INTO AUDIOID; <br>
  <div ng-show="chk1">
    INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type1}}','{{Name1}}','{{Description1}}','{{Path1}}',{{Version}}); <br>
@@ -347,6 +359,79 @@ BEGIN <br>
    INSERT INTO FLOW.AUDIO (ID,TYPE,NAME,DESCRIPTION,PATH,VERSIONID) VALUES (AUDIOID,'{{Type0}}','{{Name0}}','{{Description0}}','{{Path0}}',{{Version}}); <br>
    INSERT INTO FLOW.PROMPTAUDIO (PROMPT,AUDIO,ORDERNUM,VERSIONID) VALUES (PROMPTID,AUDIOID,{{Audio0}},{{Version}}); <br>
  </div>
+ 
+
+			<td><input type="text" ng-model="DTMF1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Name1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Condition1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="NextForm1" class="form-control input-small" ng-disabled="!chk1"></td>
+			<td><input type="text" ng-model="Tag1" class="form-control input-small" ng-disabled="!chk1"></td>
+
+
+
+ 
+   SELECT FLOW.GET_UID() INTO CHOICEID; <br>
+   
+ <div ng-show="chk1">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName1}}',MENUID,'{{DTMF1}}','{{NextForm1}}','{{Tag1}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+
+ <div ng-show="chk2">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName2}}',MENUID,'{{DTMF2}}','{{NextForm2}}','{{Tag2}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+
+  <div ng-show="chk3">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName3}}',MENUID,'{{DTMF3}}','{{NextForm3}}','{{Tag3}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+ 
+  <div ng-show="chk4">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName4}}',MENUID,'{{DTMF4}}','{{NextForm4}}','{{Tag4}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+ 
+  <div ng-show="chk5">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName5}}',MENUID,'{{DTMF5}}','{{NextForm5}}','{{Tag5}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+ 
+ 
+  <div ng-show="chk6">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName6}}',MENUID,'{{DTMF6}}','{{NextForm6}}','{{Tag6}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+ 
+ 
+  <div ng-show="chk7">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName7}}',MENUID,'{{DTMF7}}','{{NextForm7}}','{{Tag7}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+ 
+ 
+  <div ng-show="chk8">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName8}}',MENUID,'{{DTMF8}}','{{NextForm8}}','{{Tag8}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+
+
+
+  <div ng-show="chk9">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName9}}',MENUID,'{{DTMF9}}','{{NextForm9}}','{{Tag9}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+  
+ 
+  <div ng-show="chk0">
+   INSERT INTO FLOW.CHOICE (id, name, menu, dtmf, nextform, tag, versionid) VALUES (CHOICEID,'{{CName0}}',MENUID,'{{DTMF0}}','{{NextForm0}}','{{Tag0}}',{{Version}}); <br>
+   CHOICEID:=CHOICEID+1; <br><br>
+ </div>
+
+
+
+ 
+ 
    <br>
    RAISE NOTICE 'SUCCESS'; <br>
 EXCEPTION WHEN OTHERS THEN <br>
